@@ -3,7 +3,8 @@ namespace FileMonitor.TemporaryBuffer;
 /// <summary>
 /// Implementation of business logic of IBufferRepository
 /// </summary>
-internal sealed class BufferRepository : IBufferRepository
+internal sealed class BufferRepository 
+        : IBufferRepository
 {
     /// <summary>
     /// Take an item from the buffer

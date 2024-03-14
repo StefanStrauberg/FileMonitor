@@ -12,7 +12,7 @@ public static class InspectorOfTypeOfServerService
     /// <returns>IServiceCollection</returns>
     public static IServiceCollection AddTemporaryBufferServices(this IServiceCollection services)
     {
-        services.AddSingleton<IInspectorOfTypeOfServer, Inspector>();
+        services.AddSingleton<IInspectorOfTypeOfServer, InspectorOfTypeOfServer>();
         return services;
     }
 }

@@ -4,7 +4,7 @@ namespace FileMonitor.InspectorOfTypeOfServer;
 /// Inspector receive necessary information of type of being started services from configuration file 
 /// for correct way to run the application 
 /// </summary>
-internal sealed class Inspector(IConfiguration configuration) 
+internal sealed class InspectorOfTypeOfServer(IConfiguration configuration) 
     : IInspectorOfTypeOfServer
 {
     readonly IConfiguration _configuration = configuration
