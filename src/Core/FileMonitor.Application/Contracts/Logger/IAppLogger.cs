@@ -3,7 +3,7 @@ namespace FileMonitor.Application.Contracts.Logger;
 /// <summary>
 /// General logging interface
 /// </summary>
-public interface IAppLogger
+public interface IAppLogger<T>
 {
     /// <summary>
     /// Logging information event
