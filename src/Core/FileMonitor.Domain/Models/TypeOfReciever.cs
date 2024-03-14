@@ -1,12 +1,12 @@
 namespace FileMonitor.Domain.Models;
 
 /// <summary>
-/// Type of producers
+/// Type of receivers
 /// </summary>
-public enum TypeOfProducer
+public enum TypeOfReceiver
 {
     /// <summary>
-    /// UDP producer
+    /// File reciever
     /// </summary>
-    udp
+    file
 }

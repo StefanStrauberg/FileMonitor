@@ -1,14 +1,14 @@
 namespace FileMonitor.Application.Services
 {
     internal class Server(IInspectorOfTypeOfServer inspector,
-                          IFileReciever fileReciever,
+                          IFileReceiver fileReceiver,
                           IUDPProducer udpProducer) 
         : BackgroundService
     {
         readonly IInspectorOfTypeOfServer _inspector = inspector
             ?? throw new ArgumentNullException(nameof(inspector));
-        readonly IFileReciever _fileReciever = fileReciever
-            ?? throw new ArgumentNullException(nameof(fileReciever));
+        readonly IFileReceiver _fileReceiver = fileReceiver
+            ?? throw new ArgumentNullException(nameof(fileReceiver));
         readonly IUDPProducer _udpProducer = udpProducer
             ?? throw new ArgumentNullException(nameof(udpProducer));
 
@@ -18,7 +18,7 @@ namespace FileMonitor.Application.Services
 
             _ = _inspector.GetTypeOfReceiver() switch
             {
-                TypeOfReceiver.file => ReceiverStart(_fileReciever,
+                TypeOfReceiver.file => ReceiverStart(_fileReceiver,
                                                      stoppingToken),
                 _ => throw new ArgumentException("Invalid incomming type of Reciever"),
             };
@@ -33,7 +33,7 @@ namespace FileMonitor.Application.Services
             return Task.CompletedTask;
         }
 
-        static Task ReceiverStart(IReciever receiver,
+        static Task ReceiverStart(IReceiver receiver,
                                   CancellationToken stoppingToken)
             => Task.Run(() => receiver.Run(),
                         stoppingToken);
